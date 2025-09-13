@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int n, num, first, last, digits;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    num = n;
+    
+    last = n % 10;               // last digit
+    digits = (int)log10(n);      // total digits - 1
+    first = n / pow(10, digits); // first digit
+
+    // Remove first and last digits
+    n = n % (int)pow(10, digits);
+    n = n / 10;
+
+    // New number
+    int swapped = last * pow(10, digits) + n * 10 + first;
+
+    printf("Number after swapping first and last digits = %d\n", swapped);
+    return 0;
+}
