@@ -1,0 +1,17 @@
+s = "Hello 123! How are you?"
+spaces = 0
+digits = 0
+specials = 0
+
+for ch in s:
+    if ch == " ":
+        spaces += 1
+    elif ch.isdigit():
+        digits += 1
+    elif not ch.isalpha():
+        specials += 1
+
+print("Spaces:", spaces)
+print("Digits:", digits)
+print("Special characters:", specials)
+          

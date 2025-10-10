@@ -1,0 +1,7 @@
+# Q81
+s = "Hello World"
+count = 0
+for char in s:
+    count += 1
+
+print("Number of characters:", count)

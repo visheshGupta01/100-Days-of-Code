@@ -1,0 +1,16 @@
+# Q83
+s = "Programming is fun"
+s = s.lower()
+vowels = "aeiou"
+vowel_count = 0
+consonant_count = 0
+
+for ch in s:
+    if ch.isalpha():  # check if it's a letter
+        if ch in vowels:
+            vowel_count += 1
+        else:
+            consonant_count += 1
+
+print("Vowels:", vowel_count)
+print("Consonants:", consonant_count)
