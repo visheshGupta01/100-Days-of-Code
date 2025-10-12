@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    char str[] = "abcaedbf";
+    int freq[26] = {0};
+    char repeat = '\0';
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            int index = str[i] - 'a';
+            freq[index]++;
+            if (freq[index] == 2) {
+                repeat = str[i];
+                break;
+            }
+        }
+    }
+
+    if (repeat != '\0')
+        printf("First repeating lowercase character: %c\n", repeat);
+    else
+        printf("No repeating lowercase character found.\n");
+
+    return 0;
+}
