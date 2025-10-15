@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int firstOccurrence(int arr[], int n, int target) {
+    int low = 0, high = n - 1, res = -1;
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        if (arr[mid] == target) {
+            res = mid;
+            high = mid - 1;  // look left
+        } else if (arr[mid] < target)
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+    return res;
+}
+
+int lastOccurrence(int arr[], int n, int target) {
+    int low = 0, high = n - 1, res = -1;
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        if (arr[mid] == target) {
+            res = mid;
+            low = mid + 1;   // look right
+        } else if (arr[mid] < target)
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+    return res;
+}
+
+int main() {
+    int arr[] = {1, 2, 2, 2, 3, 4, 5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int target = 2;
+
+    int first = firstOccurrence(arr, n, target);
+    int last = lastOccurrence(arr, n, target);
+
+    printf("First and Last Occurrence: %d %d\n", first, last);
+    return 0;
+}

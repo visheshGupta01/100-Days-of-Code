@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char name[] = "John Ronald Reuel Tolkien";
+    int len = strlen(name);
+    int lastSpace = -1;
+
+    // find position of last space
+    for (int i = 0; i < len; i++) {
+        if (name[i] == ' ')
+            lastSpace = i;
+    }
+
+    printf("Formatted Name: ");
+    if (name[0] != ' ')
+        printf("%c. ", name[0]);
+
+    for (int i = 0; i < len; i++) {
+        if (name[i] == ' ' && i < lastSpace && name[i + 1] != ' ')
+            printf("%c. ", name[i + 1]);
+    }
+
+    // print surname in full
+    for (int i = lastSpace + 1; i < len; i++)
+        printf("%c", name[i]);
+
+    printf("\n");
+    return 0;
+}
