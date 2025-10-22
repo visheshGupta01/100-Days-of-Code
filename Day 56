@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int arr[] = {4, 5, 2, 25};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    for (int i = 0; i < n; i++) {
+        int nextGreater = -1; // Default value if no greater found
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] > arr[i]) {
+                nextGreater = arr[j];
+                break; // stop at the nearest greater element
+            }
+        }
+        printf("%d", nextGreater);
+        if (i != n - 1)
+            printf(", ");
+    }
+
+    return 0;
+}

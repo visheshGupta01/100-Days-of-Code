@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int arr[] = {10, 4, 2, 20, 40, 12, 30};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    for (int i = 0; i < n; i++) {
+        int prevGreater = -1;
+        for (int j = i - 1; j >= 0; j--) {
+            if (arr[j] > arr[i]) {
+                prevGreater = arr[j];
+                break;
+            }
+        }
+        printf("%d", prevGreater);
+        if (i != n - 1) printf(", ");
+    }
+
+    return 0;
+}
