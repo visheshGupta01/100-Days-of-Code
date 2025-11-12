@@ -1,0 +1,9 @@
+# Q119 - Find the repeated element (in one iteration)
+arr = list(map(int, input("Enter array elements: ").split()))
+seen = set()
+
+for num in arr:
+    if num in seen:
+        print("Repeated element:", num)
+        break
+    seen.add(num)

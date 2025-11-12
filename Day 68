@@ -1,0 +1,6 @@
+# Q118 - Find the missing number
+arr = list(map(int, input("Enter array elements: ").split()))
+n = len(arr)
+expected_sum = n * (n + 1) // 2
+actual_sum = sum(arr)
+print("Missing number:", expected_sum - actual_sum)
