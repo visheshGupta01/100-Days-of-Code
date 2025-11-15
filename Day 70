@@ -1,0 +1,13 @@
+# Q120 - Change string to sentence case
+
+text = input("Enter a string: ")
+
+# Convert to sentence case
+sentence_case = text.capitalize()
+
+# Optionally save to file
+with open("sentence_case.txt", "w") as f:
+    f.write(sentence_case)
+
+print("Sentence case text saved to 'sentence_case.txt'")
+print("Output:", sentence_case)
