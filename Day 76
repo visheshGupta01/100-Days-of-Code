@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    char filename[100];
+    char ch;
+
+    printf("Enter the filename: ");
+    scanf("%s", filename);
+
+    // Try to open the file in read mode
+    fp = fopen(filename, "r");
+
+    // If file pointer is NULL, file doesn't exist or can't be opened
+    if (fp == NULL) {
+        printf("Error: File '%s' not found or cannot be opened.\n", filename);
+        return 1;
+    }
+
+    printf("\n--- File Content (%s) ---\n", filename);
+    // Read and display file content character by character
+    while ((ch = fgetc(fp)) != EOF) {
+        putchar(ch);
+    }
+
+    fclose(fp); // Always close the file after use
+    printf("\n--------------------------\n");
+    printf("File read successfully.\n");
+
+    return 0;
+}
