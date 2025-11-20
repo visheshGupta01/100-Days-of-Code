@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <ctype.h>   // for tolower() and isalpha()
+
+int main() {
+    FILE *fp;
+    char filename[100];
+    char ch;
+    int vowels = 0, consonants = 0;
+
+    // Ask user for filename
+    printf("Enter the filename: ");
+    scanf("%s", filename);
+
+    // Open file in read mode
+    fp = fopen(filename, "r");
+
+    if (fp == NULL) {
+        printf("Error: Cannot open file %s\n", filename);
+        return 1;
+    }
+
+    // Read character by character
+    while ((ch = fgetc(fp)) != EOF) {
+        ch = tolower(ch); // convert to lowercase for simplicity
+        if (isalpha(ch)) { // check if it's a letter
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+                vowels++;
+            else
+                consonants++;
+        }
+    }
+
+    fclose(fp);
+
+    printf("\nNumber of vowels: %d\n", vowels);
+    printf("Number of consonants: %d\n", consonants);
+
+    return 0;
+}
