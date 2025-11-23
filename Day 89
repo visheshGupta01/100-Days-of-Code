@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+enum Week {
+    Monday,     // 0
+    Tuesday,    // 1
+    Wednesday,  // 2
+    Thursday,   // 3
+    Friday = 10,
+    Saturday,   // 11
+    Sunday      // 12
+};
+
+int main() {
+    printf("Monday = %d\n", Monday);
+    printf("Tuesday = %d\n", Tuesday);
+    printf("Wednesday = %d\n", Wednesday);
+    printf("Thursday = %d\n", Thursday);
+    printf("Friday = %d\n", Friday);
+    printf("Saturday = %d\n", Saturday);
+    printf("Sunday = %d\n", Sunday);
+
+    return 0;
+}
